@@ -1,29 +1,29 @@
 <template>
-    <div class="container">
-      <div class="line" v-for="project in projects" :key="project.name">
-        <router-link :to="project.link">
-            <div class="item">
-                {{ project.name }}
-            </div>
-        </router-link>
-      </div>
+  <div class="container">
+    <div class="line" v-for="project in projects" :key="project.name">
+      <router-link :to="project.link">
+        <div class="item">
+          {{ project.name }}
+        </div>
+      </router-link>
     </div>
+  </div>
 </template>
 
 <style scoped>
 * {
-margin: 0;
-padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
-width: 100vw;
-height: 100%;
-display: flex;
-align-items: center;
-flex-direction: column;
-justify-content: space-evenly;
-gap: 50px;
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 50px;
 }
 
 .item {
@@ -42,49 +42,49 @@ gap: 50px;
   transition: 0.5s ease;
 }
 
-.item a, .item  {
+.item a,
+.item {
   text-decoration: none;
   color: var(--rd);
   font-size: 30px;
   font-weight: bold;
 }
 
-
 .item:hover {
   background: rgba(242, 61, 76, 0.8);
-    color: var(--font);
+  color: var(--font);
 }
 
 /* CSS to remove link text decoration */
-.router-link, .line a{
-    text-decoration: none; /* Remove underline */
+.router-link,
+.line a {
+  text-decoration: none; /* Remove underline */
 }
-
 </style>
 
 <script setup>
-    // Import RouterLink from vue-router
-    import { RouterLink } from 'vue-router'
+// Import RouterLink from vue-router
+import { RouterLink } from 'vue-router'
 
-    // Define your projects data
-    const projects = [
-    { name: "LeBank", link: "/lebank" },
-    { name: "Galactic Citizens", link: "/galacticcitizens" },
-    { name: "Europe Quiz", link: "/europequiz" },
-    { name: "Flag Quiz", link: "/flagquiz" }
-    ]
-    </script>
+// Define your projects data
+const projects = [
+  { name: 'LeBank', link: '/lebank' },
+  { name: 'Galactic Citizens', link: '/gc' },
+  { name: 'Europe Quiz', link: '/europequiz' },
+  { name: 'Flag Quiz', link: '/flagquiz' }
+]
+</script>
 
-    <script>
-    // Expose RouterLink to the template
-    export default {
-    components: {
-        RouterLink
-    },
-    setup() {
-        return {
-        projects
-        }
+<script>
+// Expose RouterLink to the template
+export default {
+  components: {
+    RouterLink
+  },
+  setup() {
+    return {
+      projects
     }
-    }
+  }
+}
 </script>

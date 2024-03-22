@@ -35,6 +35,7 @@ header {
 
 header img {
   width: 30px;
+  margin-inline: 20px;
 }
 
 nav {

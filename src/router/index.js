@@ -29,6 +29,11 @@ const router = createRouter({
       path: '/lebank',
       name: 'lebank',
       component: () => import('../views/projects/lebank/LeBank.vue')
+    },
+    {
+      path: '/gc',
+      name: 'gc',
+      component: () => import('../views/projects/GC.vue')
     }
   ]
 })
