@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+:root{
+    --bg-color: #F3FAFF;
+    --db-color: #0D2B40;
+    --bb-color: #1A557F;
+    --button1-color: green;
+    --button2-color: gray;
+    --font_50: rgba(255, 255, 255, 0.5);
+
+    --font-family: 'Manrope', sans-serif;
+} 

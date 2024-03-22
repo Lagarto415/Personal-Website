@@ -1,0 +1,177 @@
+<template>
+     <div class="head">
+        <div class="headlogo">
+            <img src="./images/logo1.png">
+        </div>
+        <div class="navigation">
+            <a href="index.html">HOME</a>
+            <a href="html/beratung.html">BERATUNG</a>
+            <a href="html/kontakt.html">KONTAKT</a>
+            <a href="html/hilfe.html">HILFE</a>
+        </div>
+        <div class="loginbutton">
+            <a href="html/login.html">Online Banking</a>
+        </div>
+        <div class="menu1">
+            <a id="menu1" onclick="openmenu()" style="align-self: flex-end;"><img src="./images/menuleiste.png"> </a>
+        </div>
+        <div class="mobile_menu" id="menu"> 
+            <a style="align-self: flex-end;" onclick="closemenu()"><img src="./images/menuleiste.png"> </a>
+            <a href="index.html">HOME</a>
+            <a href="html/beratung.html">BERATUNG</a>
+            <a href="html/kontakt.html">KONTAKT</a>
+            <a href="html/hilfe.html">HILFE</a>
+            <a href="html/login.html" id="login">Online Banking</a>
+        </div>
+    </div>
+    <div class="main">
+        <div class="ele1">
+            <img src="./images/index_e1.png">
+            <div class="ele1_overlay">
+                <h1>Ihr neues Girokonto</h1>
+                <p>50€ Bonus</p>
+                <p>200+ Filialen weltweit</p>
+                <p>5% Jahreszins</p>
+            </div>
+            <div class="ele1_overlay2">
+                <a href=""><h1>Neues Girokonto eröffnen</h1></a>
+            </div>
+        </div>
+        <div class="ele2">
+            <a href="">
+                <div class="box">
+                    <img src="./images/003-bitcoin-wallet.png">
+                    <p>Depot</p>
+                </div>
+            </a>
+            <a href="">
+                <div class="box">
+                    <img src="./images/002-piggy-bank.png">
+                    <p>Sparen</p>
+                </div>
+            </a>
+            <a href="">
+                <div class="box">
+                    <img src="./images/004-home.png">
+                    <p>Immobilien</p>
+                </div>
+            </a>
+            <a href="">
+                <div class="box">
+                    <img src="./images/001-shield.png">
+                    <p>Versicherung</p>
+                </div>
+            </a>
+            <a href="">
+                <div class="box">
+                    <img src="./images/005-geld-geben.png">
+                    <p>Kredite</p>
+                </div>
+            </a>
+        </div>
+        <div class="ele3">
+            <h1>Marktinformationen</h1>
+            <div class="container3">
+                <div class="list3">
+                    <p>DAX</p>
+                    <p>MDAX</p>
+                    <p>TecDAX</p>
+                </div>
+                <div class="list3">
+                    <p id="worth">17439.10</p>
+                    <p id="worth">25855.01</p>
+                    <p id="worth">3408.05</p>
+                </div>
+                <div class="list3">
+                    <p id="per">+0.11%</p>
+                    <p id="per">-0.56%</p>
+                    <p id="per">+0.40%</p>
+                </div>
+                <div class="vl">
+
+                </div>
+                <div class="list3">
+                    <p>EUR/USD</p>
+                    <p>Gold</p>
+                    <p>Öl/Brent</p>
+                </div>
+                <div class="list3">
+                    <p id="worth">1.0847</p>
+                    <p id="worth">2027.9900</p>
+                    <p id="worth">83.890</p>
+                </div>
+                <div class="list3">
+                    <p id="per">+0.27%</p>
+                    <p id="per">-0.38%</p>
+                    <p id="per">-0.34%</p>
+                </div>
+            </div>
+        </div>
+        <div class="ele1">
+            <img src="./images/index_e2.png">
+            <div class="ele1_overlay">
+                <h1>Immobilienfinanzierung</h1>
+                <p>Felxible Kreditpausen</p>
+                <p>Freie Anpassung</p>
+                <p>1% Jahreszins</p>
+            </div>
+            <div class="ele1_overlay2">
+                <a href=""><h1>Mehr Erfahren</h1></a>
+            </div>
+        </div>
+        <div class="ele4">
+            <div class="ele4_left">
+                <img src="./images/Phone.png">
+            </div>
+            <div class="ele4_right">
+                <h1>Jetzt durchstarten mit der Le Bank App</h1>
+                <p>Alles auf einen Blick</p>
+                <img src="./images/phone_closeup.png">
+            </div>
+        </div>
+
+    </div>
+    <div class="foot">
+        <div class="top">
+            <div class="newsletter">
+                <div class="image">
+                    <img src="./images/logo2.png">
+                </div>
+                <div class="newsletter_text">
+                    <p>Abonniere unseren Newsletter, um keine neuen <br> Features zu verpassen.</p>
+                </div>
+                <div class="apply">
+                    <form>
+                        <input type="email" placeholder="E-Mail Adresse" autocomplete="off">
+                        <button>Abonnieren</button>
+                    </form>
+                </div>
+            </div>
+            <div class="lists">
+                <div class="list">
+                    <a><h1>Website</h1></a>
+                    <a href="">Übersicht</a>
+                    <a href="">Features</a>
+                    <a href="">About</a>
+                    <a href="">Pricing</a>
+                </div>
+                <div class="list">
+                    <a><h1>Hilfe</h1></a>
+                    <a href="">Wie kann ich mein Passwort ändern?</a>
+                    <a href="">Wo kann ich Geld abheben?</a>
+                    <a href="">Wie funktioniert Le Bank im Ausland?</a>
+                    <a href="">Wo kann ich den Support kontaktieren?</a>
+                </div>
+            </div>
+        </div>
+        <hr >
+        <div class="bottom">
+            <a>&#169; LeBank 2024</a>
+            <a href="">Impressum</a>
+        </div>
+    </div>
+</template>
+
+<style>
+@import url(./css/index.css);
+</style>

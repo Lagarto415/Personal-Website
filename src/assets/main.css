@@ -1,0 +1,19 @@
+@import url(./var.css);
+body{
+  background-color: var(--bg);
+  font-family: var(--fontfamily);
+  overflow-x: hidden;
+}
+::-webkit-scrollbar{
+  width: 8px;
+}
+
+::-webkit-scrollbar-track{
+  background: var(--bg);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--rd);
+  border-radius: 10px;
+}

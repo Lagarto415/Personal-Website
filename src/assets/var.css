@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+:root {
+    --bg: #03070D;
+    --font: #AAB9BF;
+    --rd: rgb(242, 61, 76);
+
+    --menufont: 5svh;
+    --headfont: 3svh;
+    --phonefont: 3.5svh;
+
+    --fontfamily: 'Manrope', sans-serif;
+}
+
+/* Color Theme Swatches in Hex */
+.TALENT-1-hex { color: #F23D4C; }
+.TALENT-2-hex { color: #03070D; }
+.TALENT-3-hex { color: #AAB9BF; }
+.TALENT-4-hex { color: #F21B1B; }
+.TALENT-5-hex { color: #F23838; }
+
