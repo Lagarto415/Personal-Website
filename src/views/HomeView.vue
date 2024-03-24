@@ -26,7 +26,6 @@
 }
 
 .container{
-  height: 50%;
   width: 100%;
   background: var(--bg);
   color: var(--font);

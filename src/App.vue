@@ -4,7 +4,8 @@ import Footer from './views/Footer.vue'
 </script>
 
 <template>
-  <header>
+  <div class="container">
+    <header>
     <nav>
       <img src="./assets/img/redLogo.png" />
       <RouterLink to="/" :class="{ active: $route.path === '/' }">Home</RouterLink>
@@ -13,13 +14,14 @@ import Footer from './views/Footer.vue'
       >
       <RouterLink to="/about" :class="{ active: $route.path === '/about' }">About</RouterLink>
     </nav>
-  </header>
-  <main>
-    <RouterView />
-  </main>
-  <footer>
-    <Footer />
-  </footer>
+    </header>
+    <main>
+      <RouterView />
+    </main>
+    <footer>
+      <Footer />
+    </footer>
+  </div>
 </template>
 
 <style scoped>
@@ -60,11 +62,18 @@ nav a:hover {
 
 main {
   width: 100%;
-  height: 100vh;
+  height: auto;
 }
 
 footer {
+  position: fixed;
+  width: 100%;
+  margin-top: 50px;
   bottom: 0;
+}
+
+.container{
+  height: 100vh;
 }
 
 .active {

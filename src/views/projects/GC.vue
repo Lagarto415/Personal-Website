@@ -69,21 +69,21 @@
           <a @click="buildmenu('close')"><img src="../../assets/img/game/x.png" /></a>
         </div>
       </div>
-      <div class="eventpopup" id="eventpopup">
+      <div class="eventpopup" id="eventpopup" ref="eventpopup">
         <div class="event_name">
-          <p id="eventname">EVENTNAME</p>
+          <p id="eventname">{{ currentEventName }}</p>
         </div>
         <div>
-          <p id="event_description">EIN EVENT IST AUFGETRETEN</p>
+          <p id="event_description">{{  currentEventDescription }}</p>
         </div>
         <div>
-          <p id="event_optiontext1"></p>
-          <p id="event_optiontext2"></p>
+          <p>{{  currentEventOption1 }}</p>
+          <p>{{  currentEventOption2 }}</p>
         </div>
         <div class="event_options">
-          <button id="option1_button">Option 1</button>
+          <button ref="option1_button">Option 1</button>
           <button @click="eventmenu('close')">Ignorieren</button>
-          <button id="option2_button">Option 2</button>
+          <button ref="option2_button">Option 2</button>
         </div>
       </div>
       <div class="buildable" id="buildable_mine">
@@ -123,8 +123,8 @@
           <img src="../../assets/img/game/waterpump.png" />
         </div>
         <div class="buildable_stats">
-          <p>Wasser pro Sekunde: <span>0</span></p>
-          <p>Effizienz: <span>0</span></p>
+          <p>Wasser pro Sekunde: {{  waterPS }}</p>
+          <p>Effizienz: {{ workerEff[workers[2].amount].eff }}</p>
           <p>Arbeiter: <span>0 / 0</span></p>
         </div>
         <div class="buildable_actions">
@@ -169,7 +169,8 @@
   font-family: var(--fontfamily);
   list-style: none;
   width: 100vw;
-  height: 100vw;
+  position: relative;
+  height: 100%;
 }
 
 /* HEADER */
@@ -189,13 +190,12 @@
   justify-content: space-around;
   text-align: center;
   background-color: var(--game_sec);
-}
-
-.ressource p {
-  margin-left: 30px;
-  padding-inline: 60px;
-  padding-block: 15px;
-  background-color: var(--game_bg);
+  p{
+    margin-left: 30px;
+    padding-inline: 60px;
+    padding-block: 15px;
+    background-color: var(--game_bg);
+  }
 }
 
 .ressource img,
@@ -232,9 +232,8 @@
   align-items: center;
   background-color: var(--game_sec);
   border-radius: 10px;
-  min-height: 40vh;
+  min-height: 50%;
   position: relative;
-  height: 75vh;
 }
 
 .stats {
@@ -468,6 +467,15 @@ export default {
         { job: 'child', amount: 0, max: 0 }
       ],
 
+      workerEff: [
+        { lvl: 1, eff: 1 },
+        { lvl: 2, eff: 1.1 },
+        { lvl: 3, eff: 1.2 },
+        { lvl: 4, eff: 1.3 },
+        { lvl: 5, eff: 1.4 },
+        { lvl: 6, eff: 1.5 }
+      ],
+
       mineral_upgradeprice: [
         { lvl: 1, price: 50, ps: 1 },
         { lvl: 2, price: 100, ps: 2 },
@@ -485,10 +493,15 @@ export default {
       ],
 
       AllEvents: [
-        { name: 'Piraten', option1: 'Verteidigen', option2: 'Verhandeln', chance: 0.3 },
-        { name: 'Aliens', option1: 'Verteidigen', option2: 'Verhandeln', chance: 0.6 },
-        { name: 'Meteoren', option1: 'Gebäude verstärken', option2: 'Dorf evakuieren', chance: 0.9 }
-      ]
+        { name: 'Piraten', option1: 'Verteidigen', option2: 'Verhandeln', chance: 0.3, description: 'Es sind Piraten lul' },
+        { name: 'Aliens', option1: 'Verteidigen', option2: 'Verhandeln', chance: 0.6, description: 'Ein großes, dir fremdes Schiff landet in der Nähe deines Dorfes. Es scheint nach etwas zu suchen, wobei es sich deinem Dorf nähert.' },
+        { name: 'Meteoren', option1: 'Gebäude verstärken', option2: 'Dorf evakuieren', chance: 0.9, description: 'Im Himmel erscheinen viele helle Punkte. Durch dein Training weißt du: das kann nur eines heißen: Meteoren!' }
+      ],
+
+      currentEventName: '',
+      currentEventDescription: '',
+      currentEventOption1: '',
+      currentEventOption2: '',
     }
   },
   methods: {
@@ -499,7 +512,7 @@ export default {
 
       this.citizen += this.citizensPS
 
-      if (Math.random() > 0.995) {
+      if (Math.random() > 0.9) {
         this.eventgeneration()
       }
     },
@@ -556,7 +569,6 @@ export default {
           this.current_minerals -= this.mineral_upgradeprice[this.minerals_level].price
           this.minerals_level++
           this.mineralsPS = this.mineral_upgradeprice[this.minerals_level - 1].ps
-          this.income('minerals', -this.mineral_upgradeprice[this.minerals_level - 1].price)
           console.log('minerals upgraded')
         } else {
           console.log('Not enough minerals')
@@ -565,7 +577,6 @@ export default {
         if (this.current_minerals >= this.water_upgradeprice[this.water_level].price) {
           this.current_minerals -= this.water_upgradeprice[this.water_level].price
           this.water_level++
-          this.income('water', -this.water_upgradeprice[this.water_level - 1].price)
           console.log('water upgraded')
         } else {
           console.log('Not enough minerals')
@@ -574,7 +585,6 @@ export default {
         if (this.current_minerals >= this.gold_upgradeprice[this.gold_level].price) {
           this.current_minerals -= this.gold_upgradeprice[this.gold_level].price
           this.gold_level++
-          this.income('gold', -this.gold_upgradeprice[this.gold_level - 1].price)
           console.log('gold upgraded')
         } else {
           console.log('Not enough minerals')
@@ -583,7 +593,6 @@ export default {
         if (this.current_minerals >= this.habitat_price[this.habitats - 1].price) {
           this.current_minerals -= this.habitat_price[this.habitats - 1].price
           this.habitats++
-          this.income('habitats', -this.habitat_price[this.habitats - 2].price)
           console.log('habitats upgraded')
         } else {
           console.log('Not enough minerals')
@@ -670,48 +679,31 @@ export default {
     wait(time) {
       return new Promise((resolve) => setTimeout(resolve, time))
     },
-    eventhandler(event) {
-      const selectedEvent = this.AllEvents[event]
-      console.log('Event:', selectedEvent.name)
+    eventhandler(e) {
+      const event = this.AllEvents[e];
+      console.log('Event:', event.name);
 
-      if (selectedEvent.options.length >= 2) {
-        console.log('Option 1:', selectedEvent.options[0].optionName)
-        console.log('Option 2:', selectedEvent.options[1].optionName)
+      if (event.option2) {
+        console.log('Option 1:', event.option1);
+        console.log('Option 2:', event.option2);
 
-        this.eventmenu('open')
+        this.eventmenu('open');
 
-        const eventnameobj = document.getElementById('eventname')
-        const eventdescriptionobj = document.getElementById('event_description')
+        this.currentEventName = event.name;
+        this.currentEventDescription = event.description;
+        this.currentEventOption1 = 'Option1: ' + event.option1;
+        this.currentEventOption2 = 'Option2: ' + event.option2;
 
-        const option1_button = document.getElementById('option1_button')
-        const option2_button = document.getElementById('option2_button')
-
-        const option1_text = document.getElementById('event_optiontext1')
-        const option2_text = document.getElementById('event_optiontext2')
-
-        eventnameobj.innerHTML = selectedEvent.name
-        eventdescriptionobj.innerHTML = selectedEvent.description
-        option1_text.innerHTML = 'Option1: ' + selectedEvent.options[0].optionName
-        option2_text.innerHTML = 'Option2: ' + selectedEvent.options[1].optionName
-
-        option1_button.addEventListener('click', function () {
-          this.executeEffect(selectedEvent.options[0].effect)
-          this.eventmenu('close')
-        })
-        option2_button.addEventListener('click', function () {
-          this.executeEffect(selectedEvent.options[1].effect)
-          this.eventmenu('close')
-        })
-
-        // Assuming the player chooses Option 1
+        this.$refs.option1_button.addEventListener('click', this.executeOption1);
+        this.$refs.option2_button.addEventListener('click', this.executeOption2);
       } else {
-        this.executeEffect(selectedEvent.options[0].effect)
+        this.executeEffect(event.option1, event.chance);
       }
     },
-    executeEffect(effect) {
-      switch (effect) {
-        case 'addminerals': {
-          this.current_minerals += effect.value
+    executeEffect(action, chance) {
+      switch (action) {
+        case 'Verteidigen': {
+          console.log(chance)
           break
         }
         default: {

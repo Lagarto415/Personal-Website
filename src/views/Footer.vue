@@ -17,15 +17,15 @@
 <style scoped>
 .footer {
     width: 100vw;
-    bottom: 0;
     background-color: var(--a);
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    height: 5vh;
-    border-radius: 10px;
     margin-block-end: 15px;
+    a{
+        width: auto;
+    }
 }
 
 .footer img {
@@ -35,10 +35,6 @@
     text-align: center;
     justify-content: center;
     vertical-align: middle;
-    transition: 0.2s ease-in-out;
 }
 
-a{
-    width: auto;
-}
 </style>
