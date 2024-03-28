@@ -2,12 +2,9 @@
 @import url("https://use.typekit.net/vpz4ntx.css");
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
-*{
-    color: var(--db-color);
-}
-
-body, html{
+body{
     font-family: var(--font-family);
+    color: var(--db-color);
     margin: 0;
     padding: 0;
     width: 100vw;
@@ -40,38 +37,34 @@ a{
     align-items: center;
     justify-content: space-evenly;
     gap: 80px;
+    a{
+        position: relative;
+    }
+    a::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px; /* Height of the underline */
+        background-color: var(--db-color); /* Color of the underline */
+        transition: width 0.3s ease; /* Transition for width */
+    }
+    a:hover::before {
+        width: 100%; /* Full width on hover */
+    }
+    
 }
-
-.navigation a{
-    position: relative;
-}
-
-.navigation a::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px; /* Height of the underline */
-    background-color: var(--db-color); /* Color of the underline */
-    transition: width 0.3s ease; /* Transition for width */
-}
-
-.navigation a:hover::before {
-    width: 100%; /* Full width on hover */
-}
-
-.loginbutton a{
-    color: white;
-    background-color: var(--db-color);
-    padding: 17px;
-    margin: 20px;
-    font-size: 18px;
-}
-
 .loginbutton{
     display: flex;
     justify-content: center;
+    a{
+        color: white;
+        background-color: var(--db-color);
+        padding: 17px;
+        margin: 20px;
+        font-size: 18px;
+    }
 }
 
 .mobile_menu{
@@ -87,35 +80,29 @@ a{
     padding: 10px;
     gap: 15px;
     margin: 3px;
+    #login{
+        background-color: var(--db-color);
+        color: white;
+        padding: 5px;
+    }
+    a{
+        font-size: 20px;
+    }
+    img{
+        width: 30px;
+        position: absolute;
+        right: 5%;
+    }
 }
-
-.mobile_menu #login{
-    background-color: var(--db-color);
-    color: white;
-    padding: 5px;
-}
-
-.mobile_menu a{
-    font-size: 20px;
-}
-
-.mobile_menu img{
-    width: 30px;
-    position: absolute;
-    right: 5%;
-}
-
 .menu1{
     display: none;
     position: absolute;
     top: 13px;
     right: 13px;
+    img{
+        width: 30px;
+    }
 }
-
-.menu1 img{
-    width: 30px;
-}
-
 /*MAIN*/
 .main{
     display: flex;
@@ -130,20 +117,35 @@ a{
 
 .ele1 {
     position: relative; /* ele1 ist der Parent-Container von Element 1, hier wird festgelegt, dass die child container sich mit ihrer Größe an diesem orientieren */
+    img { /*Festlegung der Größe des Bildes von Element 1*/
+        width: 90vw;
+        filter: brightness(30%);
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+    }
+      
   }
- 
-.ele1 img { /*Festlegung der Größe des Bildes von Element 1*/
-    width: 90vw;
-    filter: brightness(30%);
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
-}
-  
- 
+
   .ele1_overlay { /*Text auf der linken Seite*/
     position: absolute; /* Der Text von Element 1 ist so auf dem Bild*/
     top: 10%; /* Adjust this percentage value to position the div vertically */
     left: 15%; /* Adjust this percentage value to position the div horizontally */
     padding: 15px;
+    p {
+        background-color: var(--db-color);
+        padding: 5px;
+        color: white;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 20px;
+    }
+    h1{
+        background-color: var(--db-color);
+        padding: 5px;
+        color: white;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 30px;
+    }
   }
   
   .ele1_overlay2 { /*Knopf auf der rechten Seite*/
@@ -151,42 +153,19 @@ a{
     top: 35%; /* Adjust this percentage value to position the div vertically */
     right: 15%; /* Adjust this percentage value to position the div horizontally */
     padding: 15px;
+    h1{
+        transition: 0.3s ease-in-out;
+        color: var(--db-color);
+        background-color: white;
+        padding: 5px;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 30px;
+    }
+    h1:hover{
+        transform: scale(1.05);
+    }
   }
-
-.ele1_overlay2 h1{
-    transition: 0.3s ease-in-out;
-    color: var(--db-color);
-}
-
-.ele1_overlay2 h1:hover{
-    transform: scale(1.05);
-}
-  
-.ele1_overlay p {
-    background-color: var(--db-color);
-    padding: 5px;
-    color: white;
-    border-radius: 5px;
-    text-align: center;
-    font-size: 20px;
-}
-.ele1_overlay h1{
-    background-color: var(--db-color);
-    padding: 5px;
-    color: white;
-    border-radius: 5px;
-    text-align: center;
-    font-size: 30px;
-}
-.ele1_overlay2 h1{
-    background-color: white;
-    padding: 5px;
-    color: var(--db-color);
-    border-radius: 5px;
-    text-align: center;
-    font-size: 30px;
-}
-
 /*ELEMENT 2*/
 
 .ele2{
@@ -206,33 +185,29 @@ a{
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
     font-size: 25px;
     transition: 0.5s ease-in-out;
+    img{
+        width: 100px;
+    }
 }
-
 .box:hover {
     transform: scale(1.1); /* Increase scale on hover */
     box-shadow: 0px 0px 8px rgba(1, 1, 0, 0.4);
-  }
-
-.box img{
-    width: 100px;
 }
 
 /*ELEMENT 3*/
-
-.ele3 h1{
-    color: var(--db-color);
-    padding-inline: 30px;
-}
-
-.ele3 p{
-    color: var(--db-color);
-}
 
 .ele3{
     width: 90vw;
     display: flex;
     flex-direction: column;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+    p{
+        color: var(--db-color);
+    }
+    h1{
+        color: var(--db-color);
+        padding-inline: 30px;
+    }
 }
 
 .container3{

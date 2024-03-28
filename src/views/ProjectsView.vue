@@ -11,19 +11,14 @@
 </template>
 
 <style scoped>
-* {
-  margin: 0;
-  padding: 0;
-}
 
 .container {
-  width: 100vw;
-  height: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   gap: 50px;
+  margin-block: 10px;
 }
 
 .item {
@@ -71,7 +66,8 @@ const projects = [
   { name: 'LeBank', link: '/lebank' },
   { name: 'Galactic Citizens', link: '/gc' },
   { name: 'Europe Quiz', link: '/europequiz' },
-  { name: 'Flag Quiz', link: '/flagquiz' }
+  { name: 'Flag Quiz', link: '/flagquiz' },
+  { name: 'Echoes of Eternity', link: '/eoe' }
 ]
 </script>
 

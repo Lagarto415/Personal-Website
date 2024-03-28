@@ -8,8 +8,9 @@
   </div>
   <div class="container">
     <div class="left">
-      <p>Hello, I'm <h1>Yannick</h1></p>
-      <p>I have {{years}}  years and {{months}}  months experience in Webdevelopment</p>
+      <p>Hello, I Am</p>
+      <h1>Yannick</h1>
+      <p>I Am Learning Webdevelopment Since {{years}}  Years And {{months}}  Months.</p>
     </div>
     <div class="right">
       <img src="../assets/img/redLogo.png">
@@ -19,11 +20,6 @@
 
 <style scoped>
 @import url(../assets/var.css);
-
-*{
-  margin: 0;
-  padding: 0;
-}
 
 .container{
   width: 100%;

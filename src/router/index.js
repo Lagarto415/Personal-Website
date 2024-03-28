@@ -28,6 +28,16 @@ const router = createRouter({
       path: '/gc',
       name: 'gc',
       component: () => import('../views/projects/GC.vue')
+    },
+    {
+      path: '/:catchAll(.*)',
+      name: 'NotFound',
+      component: () => import('../views/NotFound.vue')
+    },
+    {
+      path: '/eoe',
+      name: 'eoe',
+      component: () => import('../views/projects/EoE.vue')
     }
   ]
 })
