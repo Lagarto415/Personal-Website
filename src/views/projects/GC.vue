@@ -74,11 +74,11 @@
           <p id="eventname">{{ currentEventName }}</p>
         </div>
         <div>
-          <p id="event_description">{{  currentEventDescription }}</p>
+          <p id="event_description">{{ currentEventDescription }}</p>
         </div>
         <div>
-          <p>{{  currentEventOption1 }}</p>
-          <p>{{  currentEventOption2 }}</p>
+          <p>{{ currentEventOption1 }}</p>
+          <p>{{ currentEventOption2 }}</p>
         </div>
         <div class="event_options">
           <button ref="option1_button">Option 1</button>
@@ -123,7 +123,7 @@
           <img src="../../assets/img/game/waterpump.png" />
         </div>
         <div class="buildable_stats">
-          <p>Wasser pro Sekunde: {{  waterPS }}</p>
+          <p>Wasser pro Sekunde: {{ waterPS }}</p>
           <p>Effizienz: {{ workerEff[workers[2].amount].eff }}</p>
           <p>Arbeiter: <span>0 / 0</span></p>
         </div>
@@ -190,7 +190,7 @@
   justify-content: space-around;
   text-align: center;
   background-color: var(--game_sec);
-  p{
+  p {
     margin-left: 30px;
     padding-inline: 60px;
     padding-block: 15px;
@@ -493,15 +493,35 @@ export default {
       ],
 
       AllEvents: [
-        { name: 'Piraten', option1: 'Verteidigen', option2: 'Verhandeln', chance: 0.3, description: 'Es sind Piraten lul' },
-        { name: 'Aliens', option1: 'Verteidigen', option2: 'Verhandeln', chance: 0.6, description: 'Ein großes, dir fremdes Schiff landet in der Nähe deines Dorfes. Es scheint nach etwas zu suchen, wobei es sich deinem Dorf nähert.' },
-        { name: 'Meteoren', option1: 'Gebäude verstärken', option2: 'Dorf evakuieren', chance: 0.9, description: 'Im Himmel erscheinen viele helle Punkte. Durch dein Training weißt du: das kann nur eines heißen: Meteoren!' }
+        {
+          name: 'Piraten',
+          option1: 'Verteidigen',
+          option2: 'Verhandeln',
+          chance: 0.3,
+          description: 'Es sind Piraten lul'
+        },
+        {
+          name: 'Aliens',
+          option1: 'Verteidigen',
+          option2: 'Verhandeln',
+          chance: 0.6,
+          description:
+            'Ein großes, dir fremdes Schiff landet in der Nähe deines Dorfes. Es scheint nach etwas zu suchen, wobei es sich deinem Dorf nähert.'
+        },
+        {
+          name: 'Meteoren',
+          option1: 'Gebäude verstärken',
+          option2: 'Dorf evakuieren',
+          chance: 0.9,
+          description:
+            'Im Himmel erscheinen viele helle Punkte. Durch dein Training weißt du: das kann nur eines heißen: Meteoren!'
+        }
       ],
 
       currentEventName: '',
       currentEventDescription: '',
       currentEventOption1: '',
-      currentEventOption2: '',
+      currentEventOption2: ''
     }
   },
   methods: {
@@ -680,24 +700,24 @@ export default {
       return new Promise((resolve) => setTimeout(resolve, time))
     },
     eventhandler(e) {
-      const event = this.AllEvents[e];
-      console.log('Event:', event.name);
+      const event = this.AllEvents[e]
+      console.log('Event:', event.name)
 
       if (event.option2) {
-        console.log('Option 1:', event.option1);
-        console.log('Option 2:', event.option2);
+        console.log('Option 1:', event.option1)
+        console.log('Option 2:', event.option2)
 
-        this.eventmenu('open');
+        this.eventmenu('open')
 
-        this.currentEventName = event.name;
-        this.currentEventDescription = event.description;
-        this.currentEventOption1 = 'Option1: ' + event.option1;
-        this.currentEventOption2 = 'Option2: ' + event.option2;
+        this.currentEventName = event.name
+        this.currentEventDescription = event.description
+        this.currentEventOption1 = 'Option1: ' + event.option1
+        this.currentEventOption2 = 'Option2: ' + event.option2
 
-        this.$refs.option1_button.addEventListener('click', this.executeOption1);
-        this.$refs.option2_button.addEventListener('click', this.executeOption2);
+        this.$refs.option1_button.addEventListener('click', this.executeOption1)
+        this.$refs.option2_button.addEventListener('click', this.executeOption2)
       } else {
-        this.executeEffect(event.option1, event.chance);
+        this.executeEffect(event.option1, event.chance)
       }
     },
     executeEffect(action, chance) {

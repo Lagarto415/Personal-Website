@@ -1,21 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
 :root {
-    --bg: #03070D;
-    --font: #AAB9BF;
-    --rd: rgb(242, 61, 76);
+  --bg: #03070d;
+  --font: #aab9bf;
+  --rd: rgb(242, 61, 76);
 
-    --menufont: 5svh;
-    --headfont: 3svh;
-    --phonefont: 3.5svh;
+  --menufont: 5svh;
+  --headfont: 3svh;
+  --phonefont: 3.5svh;
 
-    --fontfamily: 'Manrope', sans-serif;
+  --fontfamily: 'Manrope', sans-serif;
+
+  --EOEdarkBlue: #000f2c;
+  --EOEfont: #f5f1ed;
+  --EOEgradient1: #dbdaca;
+  --EOEgradient2: #91abc8;
+  --EOEbuttonBlue1: #56baf2;
+  --EOEbuttonBlue2: #4291bd;
 }
 
 /* Color Theme Swatches in Hex */
-.TALENT-1-hex { color: #F23D4C; }
-.TALENT-2-hex { color: #03070D; }
-.TALENT-3-hex { color: #AAB9BF; }
-.TALENT-4-hex { color: #F21B1B; }
-.TALENT-5-hex { color: #F23838; }
-
+.TALENT-1-hex {
+  color: #f23d4c;
+}
+.TALENT-2-hex {
+  color: #03070d;
+}
+.TALENT-3-hex {
+  color: #aab9bf;
+}
+.TALENT-4-hex {
+  color: #f21b1b;
+}
+.TALENT-5-hex {
+  color: #f23838;
+}

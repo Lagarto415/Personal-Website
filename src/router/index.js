@@ -10,22 +10,17 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/about',
-      name: 'about',
-      component: () => import('../views/AboutView.vue')
-    },
-    {
       path: '/projects',
       name: 'projects',
       component: () => import('../views/ProjectsView.vue')
     },
     {
-      path: '/lebank',
+      path: '/projects/lebank',
       name: 'lebank',
       component: () => import('../views/projects/lebank/LeBank.vue')
     },
     {
-      path: '/gc',
+      path: '/projects/gc',
       name: 'gc',
       component: () => import('../views/projects/GC.vue')
     },
@@ -35,7 +30,7 @@ const router = createRouter({
       component: () => import('../views/NotFound.vue')
     },
     {
-      path: '/eoe',
+      path: '/projects/eoe',
       name: 'eoe',
       component: () => import('../views/projects/EoE.vue')
     }

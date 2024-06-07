@@ -1,177 +1,739 @@
 <template>
-     <div class="head">
-        <div class="headlogo">
-            <img src="./images/logo1.png">
-        </div>
-        <div class="navigation">
-            <a href="index.html">HOME</a>
-            <a href="html/beratung.html">BERATUNG</a>
-            <a href="html/kontakt.html">KONTAKT</a>
-            <a href="html/hilfe.html">HILFE</a>
-        </div>
-        <div class="loginbutton">
-            <a href="html/login.html">Online Banking</a>
-        </div>
-        <div class="menu1">
-            <a id="menu1" onclick="openmenu()" style="align-self: flex-end;"><img src="./images/menuleiste.png"> </a>
-        </div>
-        <div class="mobile_menu" id="menu"> 
-            <a style="align-self: flex-end;" onclick="closemenu()"><img src="./images/menuleiste.png"> </a>
-            <a href="index.html">HOME</a>
-            <a href="html/beratung.html">BERATUNG</a>
-            <a href="html/kontakt.html">KONTAKT</a>
-            <a href="html/hilfe.html">HILFE</a>
-            <a href="html/login.html" id="login">Online Banking</a>
-        </div>
+  <div class="head">
+    <div class="headlogo">
+      <img src="./images/logo1.png" />
     </div>
-    <div class="main">
-        <div class="ele1">
-            <img src="./images/index_e1.png">
-            <div class="ele1_overlay">
-                <h1>Ihr neues Girokonto</h1>
-                <p>50€ Bonus</p>
-                <p>200+ Filialen weltweit</p>
-                <p>5% Jahreszins</p>
-            </div>
-            <div class="ele1_overlay2">
-                <a href=""><h1>Neues Girokonto eröffnen</h1></a>
-            </div>
-        </div>
-        <div class="ele2">
-            <a href="">
-                <div class="box">
-                    <img src="./images/003-bitcoin-wallet.png">
-                    <p>Depot</p>
-                </div>
-            </a>
-            <a href="">
-                <div class="box">
-                    <img src="./images/002-piggy-bank.png">
-                    <p>Sparen</p>
-                </div>
-            </a>
-            <a href="">
-                <div class="box">
-                    <img src="./images/004-home.png">
-                    <p>Immobilien</p>
-                </div>
-            </a>
-            <a href="">
-                <div class="box">
-                    <img src="./images/001-shield.png">
-                    <p>Versicherung</p>
-                </div>
-            </a>
-            <a href="">
-                <div class="box">
-                    <img src="./images/005-geld-geben.png">
-                    <p>Kredite</p>
-                </div>
-            </a>
-        </div>
-        <div class="ele3">
-            <h1>Marktinformationen</h1>
-            <div class="container3">
-                <div class="list3">
-                    <p>DAX</p>
-                    <p>MDAX</p>
-                    <p>TecDAX</p>
-                </div>
-                <div class="list3">
-                    <p id="worth">17439.10</p>
-                    <p id="worth">25855.01</p>
-                    <p id="worth">3408.05</p>
-                </div>
-                <div class="list3">
-                    <p id="per">+0.11%</p>
-                    <p id="per">-0.56%</p>
-                    <p id="per">+0.40%</p>
-                </div>
-                <div class="vl">
-
-                </div>
-                <div class="list3">
-                    <p>EUR/USD</p>
-                    <p>Gold</p>
-                    <p>Öl/Brent</p>
-                </div>
-                <div class="list3">
-                    <p id="worth">1.0847</p>
-                    <p id="worth">2027.9900</p>
-                    <p id="worth">83.890</p>
-                </div>
-                <div class="list3">
-                    <p id="per">+0.27%</p>
-                    <p id="per">-0.38%</p>
-                    <p id="per">-0.34%</p>
-                </div>
-            </div>
-        </div>
-        <div class="ele1">
-            <img src="./images/index_e2.png">
-            <div class="ele1_overlay">
-                <h1>Immobilienfinanzierung</h1>
-                <p>Felxible Kreditpausen</p>
-                <p>Freie Anpassung</p>
-                <p>1% Jahreszins</p>
-            </div>
-            <div class="ele1_overlay2">
-                <a href=""><h1>Mehr Erfahren</h1></a>
-            </div>
-        </div>
-        <div class="ele4">
-            <div class="ele4_left">
-                <img src="./images/Phone.png">
-            </div>
-            <div class="ele4_right">
-                <h1>Jetzt durchstarten mit der Le Bank App</h1>
-                <p>Alles auf einen Blick</p>
-                <img src="./images/phone_closeup.png">
-            </div>
-        </div>
-
+    <div class="navigation">
+      <a href="index.html">HOME</a>
+      <a href="html/beratung.html">BERATUNG</a>
+      <a href="html/kontakt.html">KONTAKT</a>
+      <a href="html/hilfe.html">HILFE</a>
     </div>
-    <div class="foot">
-        <div class="top">
-            <div class="newsletter">
-                <div class="image">
-                    <img src="./images/logo2.png">
-                </div>
-                <div class="newsletter_text">
-                    <p>Abonniere unseren Newsletter, um keine neuen <br> Features zu verpassen.</p>
-                </div>
-                <div class="apply">
-                    <form>
-                        <input type="email" placeholder="E-Mail Adresse" autocomplete="off">
-                        <button>Abonnieren</button>
-                    </form>
-                </div>
-            </div>
-            <div class="lists">
-                <div class="list">
-                    <a><h1>Website</h1></a>
-                    <a href="">Übersicht</a>
-                    <a href="">Features</a>
-                    <a href="">About</a>
-                    <a href="">Pricing</a>
-                </div>
-                <div class="list">
-                    <a><h1>Hilfe</h1></a>
-                    <a href="">Wie kann ich mein Passwort ändern?</a>
-                    <a href="">Wo kann ich Geld abheben?</a>
-                    <a href="">Wie funktioniert Le Bank im Ausland?</a>
-                    <a href="">Wo kann ich den Support kontaktieren?</a>
-                </div>
-            </div>
-        </div>
-        <hr >
-        <div class="bottom">
-            <a>&#169; LeBank 2024</a>
-            <a href="">Impressum</a>
-        </div>
+    <div class="loginbutton">
+      <a href="html/login.html">Online Banking</a>
     </div>
+    <div class="menu1">
+      <a id="menu1" onclick="openmenu()" style="align-self: flex-end"
+        ><img src="./images/menuleiste.png" />
+      </a>
+    </div>
+    <div class="mobile_menu" id="menu">
+      <a style="align-self: flex-end" onclick="closemenu()"
+        ><img src="./images/menuleiste.png" />
+      </a>
+      <a href="index.html">HOME</a>
+      <a href="html/beratung.html">BERATUNG</a>
+      <a href="html/kontakt.html">KONTAKT</a>
+      <a href="html/hilfe.html">HILFE</a>
+      <a href="html/login.html" id="login">Online Banking</a>
+    </div>
+  </div>
+  <div class="main">
+    <div class="ele1">
+      <img src="./images/index_e1.png" />
+      <div class="ele1_overlay">
+        <h1>Ihr neues Girokonto</h1>
+        <p>50€ Bonus</p>
+        <p>200+ Filialen weltweit</p>
+        <p>5% Jahreszins</p>
+      </div>
+      <div class="ele1_overlay2">
+        <a href=""><h1>Neues Girokonto eröffnen</h1></a>
+      </div>
+    </div>
+    <div class="ele2">
+      <a href="">
+        <div class="box">
+          <img src="./images/003-bitcoin-wallet.png" />
+          <p>Depot</p>
+        </div>
+      </a>
+      <a href="">
+        <div class="box">
+          <img src="./images/002-piggy-bank.png" />
+          <p>Sparen</p>
+        </div>
+      </a>
+      <a href="">
+        <div class="box">
+          <img src="./images/004-home.png" />
+          <p>Immobilien</p>
+        </div>
+      </a>
+      <a href="">
+        <div class="box">
+          <img src="./images/001-shield.png" />
+          <p>Versicherung</p>
+        </div>
+      </a>
+      <a href="">
+        <div class="box">
+          <img src="./images/005-geld-geben.png" />
+          <p>Kredite</p>
+        </div>
+      </a>
+    </div>
+    <div class="ele3">
+      <h1>Marktinformationen</h1>
+      <div class="container3">
+        <div class="list3">
+          <p>DAX</p>
+          <p>MDAX</p>
+          <p>TecDAX</p>
+        </div>
+        <div class="list3">
+          <p id="worth">17439.10</p>
+          <p id="worth">25855.01</p>
+          <p id="worth">3408.05</p>
+        </div>
+        <div class="list3">
+          <p id="per">+0.11%</p>
+          <p id="per">-0.56%</p>
+          <p id="per">+0.40%</p>
+        </div>
+        <div class="vl"></div>
+        <div class="list3">
+          <p>EUR/USD</p>
+          <p>Gold</p>
+          <p>Öl/Brent</p>
+        </div>
+        <div class="list3">
+          <p id="worth">1.0847</p>
+          <p id="worth">2027.9900</p>
+          <p id="worth">83.890</p>
+        </div>
+        <div class="list3">
+          <p id="per">+0.27%</p>
+          <p id="per">-0.38%</p>
+          <p id="per">-0.34%</p>
+        </div>
+      </div>
+    </div>
+    <div class="ele1">
+      <img src="./images/index_e2.png" />
+      <div class="ele1_overlay">
+        <h1>Immobilienfinanzierung</h1>
+        <p>Felxible Kreditpausen</p>
+        <p>Freie Anpassung</p>
+        <p>1% Jahreszins</p>
+      </div>
+      <div class="ele1_overlay2">
+        <a href=""><h1>Mehr Erfahren</h1></a>
+      </div>
+    </div>
+    <div class="ele4">
+      <div class="ele4_left">
+        <img src="./images/Phone.png" />
+      </div>
+      <div class="ele4_right">
+        <h1>Jetzt durchstarten mit der Le Bank App</h1>
+        <p>Alles auf einen Blick</p>
+        <img src="./images/phone_closeup.png" />
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div class="top">
+      <div class="newsletter">
+        <div class="image">
+          <img src="./images/logo2.png" />
+        </div>
+        <div class="newsletter_text">
+          <p>
+            Abonniere unseren Newsletter, um keine neuen <br />
+            Features zu verpassen.
+          </p>
+        </div>
+        <div class="apply">
+          <form>
+            <input type="email" placeholder="E-Mail Adresse" autocomplete="off" />
+            <button>Abonnieren</button>
+          </form>
+        </div>
+      </div>
+      <div class="lists">
+        <div class="list">
+          <a><h1>Website</h1></a>
+          <a href="">Übersicht</a>
+          <a href="">Features</a>
+          <a href="">About</a>
+          <a href="">Pricing</a>
+        </div>
+        <div class="list">
+          <a><h1>Hilfe</h1></a>
+          <a href="">Wie kann ich mein Passwort ändern?</a>
+          <a href="">Wo kann ich Geld abheben?</a>
+          <a href="">Wie funktioniert Le Bank im Ausland?</a>
+          <a href="">Wo kann ich den Support kontaktieren?</a>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div class="bottom">
+      <a>&#169; LeBank 2024</a>
+      <a href="">Impressum</a>
+    </div>
+  </div>
 </template>
 
-<style>
-@import url(./css/index.css);
+<style scoped>
+@import url('css/variables.css');
+@import url('https://use.typekit.net/vpz4ntx.css');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+body,
+html {
+  font-family: var(--font-family);
+  color: var(--db-color);
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  overflow-x: hidden;
+  background-color: white;
+}
+
+a {
+  text-decoration: none;
+  color: var(--db-color);
+}
+
+/*HEADER*/
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--db-color);
+  font-size: 24px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+}
+
+.headlogo img {
+  padding: 10px;
+  height: 80px;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 80px;
+  a {
+    position: relative;
+  }
+  a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px; /* Height of the underline */
+    background-color: var(--db-color); /* Color of the underline */
+    transition: width 0.3s ease; /* Transition for width */
+  }
+  a:hover::before {
+    width: 100%; /* Full width on hover */
+  }
+}
+.loginbutton {
+  display: flex;
+  justify-content: center;
+  a {
+    color: white;
+    background-color: var(--db-color);
+    padding: 17px;
+    margin: 20px;
+    font-size: 18px;
+  }
+}
+
+.mobile_menu {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  right: 0;
+  top: 0;
+  position: absolute;
+  z-index: 1;
+  background-color: white;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+  padding: 10px;
+  gap: 15px;
+  margin: 3px;
+  #login {
+    background-color: var(--db-color);
+    color: white;
+    padding: 5px;
+  }
+  a {
+    font-size: 20px;
+  }
+  img {
+    width: 30px;
+    position: absolute;
+    right: 5%;
+  }
+}
+.menu1 {
+  display: none;
+  position: absolute;
+  top: 13px;
+  right: 13px;
+  img {
+    width: 30px;
+  }
+}
+/*MAIN*/
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-block: 42px;
+  gap: 42px;
+}
+
+/*ELEMENT 1*/
+
+.ele1 {
+  position: relative; /* ele1 ist der Parent-Container von Element 1, hier wird festgelegt, dass die child container sich mit ihrer Größe an diesem orientieren */
+  img {
+    /*Festlegung der Größe des Bildes von Element 1*/
+    width: 90vw;
+    filter: brightness(30%);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+  }
+}
+
+.ele1_overlay {
+  /*Text auf der linken Seite*/
+  position: absolute; /* Der Text von Element 1 ist so auf dem Bild*/
+  top: 10%; /* Adjust this percentage value to position the div vertically */
+  left: 15%; /* Adjust this percentage value to position the div horizontally */
+  padding: 15px;
+  p {
+    background-color: var(--db-color);
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 20px;
+  }
+  h1 {
+    background-color: var(--db-color);
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 30px;
+  }
+}
+
+.ele1_overlay2 {
+  /*Knopf auf der rechten Seite*/
+  position: absolute;
+  top: 35%; /* Adjust this percentage value to position the div vertically */
+  right: 15%; /* Adjust this percentage value to position the div horizontally */
+  padding: 15px;
+  h1 {
+    transition: 0.3s ease-in-out;
+    color: var(--db-color);
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 30px;
+  }
+  h1:hover {
+    transform: scale(1.05);
+  }
+}
+/*ELEMENT 2*/
+
+.ele2 {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 35px;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 200px;
+  width: 200px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+  font-size: 25px;
+  transition: 0.5s ease-in-out;
+  img {
+    width: 100px;
+  }
+}
+.box:hover {
+  transform: scale(1.1); /* Increase scale on hover */
+  box-shadow: 0px 0px 8px rgba(1, 1, 0, 0.4);
+}
+
+/*ELEMENT 3*/
+
+.ele3 {
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+  p {
+    color: var(--db-color);
+  }
+  h1 {
+    color: var(--db-color);
+    padding-inline: 30px;
+  }
+}
+
+.container3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.list3 {
+  display: flex;
+  flex-direction: column;
+}
+
+.vl {
+  border-left: 1px solid var(--db-color);
+  height: 150px;
+}
+
+/*ELEMENT 4*/
+
+.ele4 {
+  width: 90vw;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.ele4_left img {
+  padding: 10px;
+}
+
+.ele4_right {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.ele4_right img {
+  width: 400px;
+}
+
+/*FOOTER*/
+.foot {
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--db-color);
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  padding-inline: 30px;
+  padding-block: 10px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background-color: var(--bb-color);
+  color: white;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 200;
+  font-size: 20px;
+  position: absolute;
+  margin-left: -100px;
+  transition: 0.3s ease-in-out;
+}
+
+input {
+  color: var(--font_50);
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  font-family: 'Manrope', sans-serif;
+  font-weight: 200;
+  font-size: 20px;
+  padding-inline-end: 100px;
+  padding-inline-start: 30px;
+  padding-block: 10px;
+}
+
+input:focus {
+  outline: none;
+}
+
+hr {
+  background-color: var(--db-color);
+  width: 95vw;
+  height: 2px;
+  box-shadow: none;
+  background-color: var(--bb-color);
+  border-color: var(--bb-color);
+}
+
+.newsletter {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-top: 50px;
+  color: var(--font_50);
+  width: 50%;
+}
+
+.newsletter_text,
+.apply {
+  margin-left: 50px;
+  font-size: 20px;
+}
+
+.newsletter_text p {
+  color: var(--font_50);
+}
+
+.lists {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 50%;
+}
+
+.image img {
+  margin-left: 50px;
+  width: 7vw;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 2vh;
+}
+
+.list a,
+.bottom a,
+.list h1 {
+  cursor: default;
+  position: relative;
+  color: white;
+  transition: 0.2s ease-in-out;
+}
+
+.list a[href],
+.bottom a[href] {
+  cursor: pointer;
+}
+
+.list a[href]:hover,
+.bottom a[href]:hover {
+  text-decoration: underline;
+}
+
+.bottom {
+  background-color: var(--db-color);
+  margin-inline: 1vw;
+  margin-top: 1vh;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+button:hover {
+  cursor: pointer;
+  filter: brightness(1.2);
+}
+
+::-webkit-scrollbar {
+  width: 10px; /* Width of vertical scrollbar */
+  height: 10px; /* Height of horizontal scrollbar */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1); /* Color of scrollbar track */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--db-color); /* Color of scrollbar handle */
+  border-radius: 5px; /* Rounded corners */
+}
+
+/* For screens smaller than 768px (e.g., smartphones) */
+@media screen and (max-width: 480px) {
+  /* HEADER */
+  .head {
+    font-size: 15px;
+    justify-content: center;
+    height: 60px;
+  }
+  .loginbutton a {
+    font-size: 10px;
+    margin: 5px;
+    margin-left: 10px;
+    padding: 5px;
+  }
+  .navigation,
+  .loginbutton {
+    display: none;
+  }
+  .headlogo img {
+    width: 60px;
+    height: auto;
+  }
+
+  .mobile_menu {
+    display: flex;
+  }
+
+  .menu1 {
+    display: inline;
+  }
+  /* MAIN */
+  /* ELEMENT 1 */
+  .ele1_overlay p {
+    font-size: 10px;
+    padding: 5px;
+  }
+  .ele1_overlay h1 {
+    font-size: 15px;
+  }
+
+  .ele1_overlay2 h1 {
+    font-size: 15px;
+  }
+  .ele1 img {
+    width: 300px;
+  }
+  .ele1_overlay,
+  .ele1_overlay2 {
+    position: static;
+  }
+  .ele1_overlay2 h1 {
+    border: 1px solid var(--db-color);
+  }
+  .ele1 img {
+    display: none;
+  }
+  .ele1 {
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+  }
+
+  /* ELEMENT 2 */
+
+  .ele2 img {
+    width: 70px;
+  }
+  .box {
+    width: 150px;
+    height: 150px;
+    font-size: 19px;
+  }
+  .ele2 {
+    flex-direction: column;
+  }
+  /* ELEMENT 3 */
+  .ele3 p,
+  .ele3 h1 {
+    font-size: 15px;
+    margin-inline: 10px;
+  }
+
+  /* ELEMENT 4 */
+  .ele4_left {
+    display: none;
+  }
+  .ele4_right,
+  .ele4_right h1 {
+    font-size: 15px;
+  }
+  .ele4_right img {
+    width: 200px;
+  }
+
+  /* FOOTER */
+  a,
+  p,
+  input,
+  button,
+  h1 {
+    font-size: 10px;
+  }
+
+  .foot img {
+    width: 50px;
+  }
+  input {
+    padding-inline-end: 10px;
+    padding-inline-start: 10px;
+    padding-block: 10px;
+  }
+  button {
+    padding: 10px;
+    margin-left: -50px;
+  }
+  .lists {
+    display: none;
+  }
+  .top {
+    justify-content: center;
+    text-align: center;
+  }
+  .newsletter {
+    width: 90vw;
+    margin-top: 10px;
+  }
+}
+
+/* For screens between 768px and 1024px (e.g., tablets) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  /* CSS rules specific to medium-sized screens */
+}
+
+/* For screens wider than 1400px */
+@media screen and (min-width: 1601px) {
+  main {
+    margin: 0 auto; /* Center content horizontally */
+    max-width: 1600px; /* Limit content width */
+  }
+
+  .ele1 img {
+    max-width: 100%; /* Ensure image scales within its parent container */
+    width: auto; /* Override fixed width */
+  }
+
+  .ele2,
+  .ele3,
+  .ele4 {
+    width: 1400px; /* Set width to a percentage */
+    margin: 0 auto; /* Center elements horizontally */
+  }
+
+  .box {
+    box-sizing: border-box; /* Include padding and border in the element's total width */
+  }
+
+  .head {
+    padding: 0 20px; /* Add padding to the header for better spacing */
+  }
+
+  .foot {
+    padding: 20px; /* Add padding to the footer for better spacing */
+  }
+}
 </style>

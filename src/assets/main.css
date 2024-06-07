@@ -1,15 +1,22 @@
-@import url(./var.css);
-html{
+/* main.css */
+@import url('./var.css');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
   font-family: var(--fontfamily);
   overflow-x: hidden;
   background-color: var(--bg);
-  height: 100vh;
 }
-::-webkit-scrollbar{
+
+::-webkit-scrollbar {
   width: 8px;
 }
 
-::-webkit-scrollbar-track{
+::-webkit-scrollbar-track {
   background: var(--bg);
 }
 

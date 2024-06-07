@@ -1,56 +1,73 @@
 <script setup>
-
+import Header from '../components/MainHeader.vue'
+import Footer from '../components/MainFooter.vue'
 </script>
 
 <template>
-  <div class="header">
-    <h1><span>L</span>agarto5.de</h1>
-  </div>
-  <div class="container">
-    <div class="left">
-      <p>Hello, I Am</p>
-      <h1>Yannick</h1>
-      <p>I Am Learning Webdevelopment Since {{years}}  Years And {{months}}  Months.</p>
+  <Header />
+  <div class="main">
+    <div class="header">
+      <h1><img src="../assets/img/redLogo.png" alt="L" />agarto5.de</h1>
     </div>
-    <div class="right">
-      <img src="../assets/img/redLogo.png">
+    <div class="container">
+      <div class="left">
+        <p>Hello, I am</p>
+        <h1>Yannick</h1>
+        <p>I started learning webdevelopment {{ years }} years and {{ months }} months ago.</p>
+      </div>
+      <div class="right">
+        <img src="../assets/img/redLogo.png" />
+      </div>
     </div>
   </div>
+  <Footer />
 </template>
 
 <style scoped>
-@import url(../assets/var.css);
+body,
+html {
+  background-color: var(--bg);
+}
 
-.container{
+.main {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.container {
   width: 100%;
   background: var(--bg);
   color: var(--font);
   display: flex;
   align-items: center;
-  flex-direction: row;
   justify-content: space-around;
 }
 
-.header{  
+.header {
   color: var(--font);
   text-align: center;
-  margin-top: 100px;  
-  span{
+  span {
     color: var(--rd);
     font-size: larger;
   }
+  img {
+    width: 35px;
+  }
 }
 
-.right img{
+.right img {
   width: 100px;
 }
 
-.left{
-  h1{
+.left {
+  h1 {
     font-size: 50px;
     color: var(--rd);
   }
-  p{
+  p {
     font-size: 20px;
   }
 }
@@ -65,22 +82,21 @@ export default {
     }
   },
   mounted() {
-    const currentDate = new Date(); // Get current date
-    const september2023 = new Date('September 1, 2023'); // September 2023 date
-    
+    const currentDate = new Date() // Get current date
+    const september2023 = new Date('September 1, 2023') // September 2023 date
+
     // Calculate the difference in years and months
-    let yearsDiff = currentDate.getFullYear() - september2023.getFullYear();
-    let monthsDiff = currentDate.getMonth() - september2023.getMonth();
+    let yearsDiff = currentDate.getFullYear() - september2023.getFullYear()
+    let monthsDiff = currentDate.getMonth() - september2023.getMonth()
 
     // Adjust the difference if the current month is before September
     if (monthsDiff < 0) {
-      yearsDiff--;
-      monthsDiff += 12;
+      yearsDiff--
+      monthsDiff += 12
     }
 
-    this.years = yearsDiff;
-    this.months = monthsDiff;
+    this.years = yearsDiff
+    this.months = monthsDiff
   }
 }
 </script>
-

@@ -1,85 +1,37 @@
+<script setup>
+import Header from '../components/MainHeader.vue'
+import Item from '../components/ProjectItem.vue'
+</script>
+
 <template>
+  <Header />
   <div class="container">
-    <div class="line" v-for="project in projects" :key="project.name">
-      <router-link :to="project.link">
-        <div class="item">
-          {{ project.name }}
-        </div>
-      </router-link>
-    </div>
+    <Item v-for="item in projects" :title="item.name" :route="item.link" :key="item.index" />
   </div>
 </template>
 
 <style scoped>
-
 .container {
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: center;
-  gap: 50px;
-  margin-block: 10px;
-}
-
-.item {
-  display: flex; /* Use flexbox */
-  align-items: center; /* Center vertically */
-  justify-content: center; /* Center horizontally */
-  width: 80vw;
-  height: 200px;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(1.5px);
-  -webkit-backdrop-filter: blur(1.5px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  transition: 0.5s ease;
-}
-
-.item a,
-.item {
-  text-decoration: none;
-  color: var(--rd);
-  font-size: 30px;
-  font-weight: bold;
-}
-
-.item:hover {
-  background: rgba(242, 61, 76, 0.8);
-  color: var(--font);
-}
-
-/* CSS to remove link text decoration */
-.router-link,
-.line a {
-  text-decoration: none; /* Remove underline */
+  justify-content: space-evenly;
+  margin-block: 15px;
 }
 </style>
-
-<script setup>
-// Import RouterLink from vue-router
-import { RouterLink } from 'vue-router'
-
-// Define your projects data
-const projects = [
-  { name: 'LeBank', link: '/lebank' },
-  { name: 'Galactic Citizens', link: '/gc' },
-  { name: 'Europe Quiz', link: '/europequiz' },
-  { name: 'Flag Quiz', link: '/flagquiz' },
-  { name: 'Echoes of Eternity', link: '/eoe' }
-]
-</script>
 
 <script>
 // Expose RouterLink to the template
 export default {
-  components: {
-    RouterLink
-  },
-  setup() {
+  data() {
     return {
-      projects
+      projects: [
+        //{ name: 'LeBank', link: '/projects/lebank' },
+        //{ name: 'Galactic Citizens', link: '/projects/gc' }
+        //{ name: 'Europe Quiz', link: '/projects/europequiz' },
+        //{ name: 'Flag Quiz', link: '/projects/flagquiz' }
+        { name: 'Echoes of Eternity', link: '/projects/eoe' }
+      ]
     }
   }
 }
