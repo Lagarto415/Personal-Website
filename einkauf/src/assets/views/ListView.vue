@@ -26,6 +26,7 @@ import open from '../img/openDrop.svg'
           <div class="row">
             <div class="name" :class="item.done ? 'ItemDone' : ''">
               <p>{{ item.name }}</p>
+              <p class="username">{{ item.username }}</p>
             </div>
             <div class="done" @click="toggleDone(item.id)">
               <img :src="item.done ? undoImage : tickImage" alt="Done or Undo" />
@@ -44,6 +45,7 @@ import open from '../img/openDrop.svg'
           <div class="row optionalItem">
             <div class="name" :class="item.done ? 'ItemDone' : ''">
               <p>{{ item.name }}</p>
+              <p class="username">{{ item.username }}</p>
             </div>
             <div class="done" @click="toggleDone(item.id)">
               <img :src="item.done ? undoImage : tickImage" alt="Done or Undo" />
@@ -196,10 +198,16 @@ import open from '../img/openDrop.svg'
   padding-block: 10px;
   border-radius: 5px;
   .name {
+    display: flex;
+    width: 65%;
+    justify-content: space-between;
     padding-left: 10px;
     color: var(--fontgrey);
     font-size: 18px;
     font-weight: 500;
+  }
+  .username{
+    color: #c5c5c5;
   }
   .done {
     padding-right: 10px;
@@ -239,11 +247,14 @@ ul {
 </style>
 
 <script>
+import Cookies from 'js-cookie'
+
 export default {
   name: 'ListView',
   data() {
     return {
       newItemInput: '',
+      username: '',
       newItemInputOptional: false,
       tickImage: tick,
       undoImage: undo,
@@ -257,6 +268,8 @@ export default {
   },
   mounted() {
     console.log('List component has been mounted!')
+    this.username = Cookies.get('username')
+    console.log(this.username)
     // Fetch the initial list of items when the component mounts
     this.fetchItems()
   },
@@ -339,7 +352,8 @@ export default {
       this.items.push({
         name: this.newItemInput,
         done: false,
-        optional: this.newItemInputOptional
+        optional: this.newItemInputOptional,
+        username: this.username
       })
       this.newItemInput = ''
       this.newItemInputOptional = false

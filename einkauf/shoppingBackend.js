@@ -20,7 +20,7 @@ const options = {
 
 // Create a MySQL connection pool
 const db = mysql.createPool({
-  connectionLimit: 10,  // Adjust based on your server's capability
+  connectionLimit: 100,  // Adjust based on your server's capability
   host: '185.166.39.80',
   user: 'root',
   password: 'otto1.',
